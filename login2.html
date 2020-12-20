@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karrya india</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="frm-login mytabs">
+        <span class="btn-close"><img src="images/close.png" alt=""></span>
+        <h4 class="frm-title">Login</h4>
+        <p>New Jobseeker Registration | <a href="signup.html" class="btn-signup">Sign Up </a></p>
+
+
+        <div class="nom-login">
+            <div class="input-field">
+                <span class="lbl">Email / Username</span>
+                <input type="text" placeholder="Email / username">
+            </div>
+
+            <div class="input-field">
+                <span class="lbl">Password</span>
+                <div class="wrapper-show">
+                    <span class="btn-show-pass">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                    <input class="" type="password" placeholder="Password" name="pass">
+                </div>
+            </div>
+            <div class="forgot-pass">
+                <a href="#">forgot password ?</a>
+            </div>
+            <button class="frm-btn btn-log">Login</button>
+        </div>
+        <div class="otp-login">
+            <div class="input-field">
+                <span class="lbl">Mobile No.</span>
+                <div class="mobilewrapper">
+                    <input class="mobileInput" type="text" placeholder="Enter Mobile number">
+                    <span class="unit">+ 91 -</span>
+                </div>
+                <div class="mobiledescription">You will receive an OTP on this number</div>
+            </div>
+            <button class="frm-btn btn-log" disabled> Get OTP</button>
+            <div class="input-field">
+                <span class="lbl">OTP sent on <label>+91 -9876543210</label><a class="btn-resend" href="#">resend
+                        otp</a></span>
+                <input class="" type="text" placeholder="Enter OTP Sent on your mobile No.">
+            </div>
+            <button class="frm-btn btn-log"> Verify OTP</button>
+        </div>
+        <div class="orsec">
+            <span class="ortext">OR</span>
+        </div>
+        <button class="frm-btn btn-switch">Use otp to login</button>
+        <div class="orsec">
+            <span class="ortext">OR</span>
+        </div>
+        <a href="#" class="google-btn">
+            <img src="images/icons/ic-google.png" alt="">
+            <span>Continue with Google</span>
+        </a>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".btn-switch").click(function () {
+                if ($(".otp-login").is(":visible") == true) {
+                    // $(".otp-login").slideToggle();
+                    $(".nom-login").show();
+                    $(".otp-login").hide();
+                }
+                else if ($(".nom-login").is(":visible") == true) {
+                    $(".nom-login").hide();
+                    $(".otp-login").show();
+                }
+            });
+
+
+        })
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            var showPass = 0;
+            $('.btn-show-pass').on('click', function () {
+                if (showPass == 0) {
+                    $(this).next('input').attr('type', 'text');
+                    $(this).find('i').removeClass('fa-eye');
+                    $(this).find('i').addClass('fa-eye-slash');
+                    showPass = 1;
+                }
+                else {
+                    $(this).next('input').attr('type', 'password');
+                    $(this).find('i').removeClass('fa-eye-slash');
+                    $(this).find('i').addClass('fa-eye');
+                    showPass = 0;
+                }
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>
